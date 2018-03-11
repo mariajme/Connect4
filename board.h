@@ -34,7 +34,7 @@ class Board {
 public:
     // Modifies: private data members
     // Effects: Constructs an empty board with Player1 to move.
-    // Difficulty: Easy
+    // Difficulty: * 
     // Topics: class constructors, array initialization
     Board();
 
@@ -46,14 +46,14 @@ public:
     //          having this constructor is for testing (ability to encode game states
     //          for easier tests) and to allow games to be loaded to/from files.
     //          FEN strings are explained further in the spec.
-    // Difficulty: Medium-Hard
+    // Difficulty: ****
     // Topics: class constructors, string parsing, testing
     Board(const std::string &fen);
 
     // Requires: os has been opened
     // Effects: Prints the board as a "fen" string (described in spec), to the specified
     //          stream. This allows games to be saved to files.
-    // Difficulty: Hard
+    // Difficulty: *****
     // Topics: array traversal, nested loops, streams
     void printBoard_as_FENstring(std::ostream &os) const;
 
@@ -71,10 +71,11 @@ public:
 
 
     // Effects: Returns the player to move (1 for player 1, 2 for player 2)
-    // Difficulty: Easy
+    // Difficulty: *
     // Topics: member functions
     int toMove() const;
 
+	// Requires: col represents array index (i.e. first column is at index 0)
     // Modifies: private data members
     // Effects: Makes the move, returning the appropriate result --
     //          IllegalMove, Win, Draw, NoResult. The function itself is
@@ -82,7 +83,7 @@ public:
     // Note: Parameter col represents array index.
 	//       Important -- make sure to update next player before detecting
 	//       the correct result (Win, Draw, NoResult).
-    // Difficulty: Easy-Medium
+    // Difficulty: **
     // Topics: Use of private helper functions
     // Calls: getFirstFreeRow, updateToMove, isBoardFull, isWin
     Result makeMove(int col);
@@ -91,7 +92,7 @@ private:
     // Requires: col must be inbounds of array
     // Effects: Returns the lowest row that is Empty in the column specified.
     //          Returns NUM_ROWS if there are no rows free.
-    // Difficulty: Easy-Medium
+    // Difficulty: **
     // Topics: array traversal
     int getFirstFreeRow(int col) const;
 
@@ -99,20 +100,20 @@ private:
     //          Returns the old, previous player. 
     //          Example: If Player 1 just moved, the next player is now Player 2,
     //          while returning Player1.
-    // Difficulty: Easy
+    // Difficulty: *
     // Topics: enums, invariant maintenance
     PieceType updateToMove();
 
     // Requires: there is not a win
     // Effects: Returns true iff the game is a draw, i.e.,
     //          the board is full
-    // Difficulty: Easy-Medium
+    // Difficulty: **
     // Topics: array traversal
     bool isBoardFull() const;
 
     // Helper for piecesInDirection.
     // Effects: Returns true iff (row,col) is in bounds.
-    // Difficulty: Easy
+    // Difficulty: *
     // Topics: predicate functions
     bool inBounds(int row, int col) const;
 
@@ -122,7 +123,7 @@ private:
     //          of the vector, which are the same type as the piece at (row, col).
     //          It DOES NOT count the piece at (row, col).
     //          Returns the count
-    // Difficulty: Medium
+    // Difficulty: ***
     // Topics: Array traversal (bounds checking), loop logic
     // calls: inBounds
     // sample calls:
@@ -135,7 +136,7 @@ private:
 
     // Requires: row and col are within bounds of the array
     // Effects: returns true iff the piece placed at (row, col) caused a win.
-    // Difficulty: Medium
+    // Difficulty: ***
     // Topics: logic/reading directions
     // Calls: piecesInDirection, 
     bool isWin(int row, int col) const;
