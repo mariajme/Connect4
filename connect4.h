@@ -17,12 +17,12 @@ void terminalPlay();
 // Effects: Lets the user choose whether to start a new game, or load an
 //          existing one. Returns the game board. modifies p1 and p2 to be
 //          the player names.
-// Difficulty: Easy-Medium
+// Difficulty: **
 // Topics: Basic/IO, pass by reference, class construction
 Board getBoard(string &p1, string &p2);
 
 // Prompts the user for the filename, and saves the board.
-// Difficulty: Easy
+// Difficulty: *
 // Topics: streams
 void saveBoard(string p1, string p2, const Board &board);
 
