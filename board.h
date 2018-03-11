@@ -63,7 +63,7 @@ public:
     // Topics: array traversal, streams
     void prettyPrintBoard(std::ostream &os) const;
     
-    //Requires: row and col are >= 0
+    // Requires: row and col are >= 0
     // This one is written for you
     // Difficulty: Super simple since it is already written
     // Topics: arrays
@@ -75,14 +75,13 @@ public:
     // Topics: member functions
     int toMove() const;
 
-	// Requires: col represents array index (i.e. first column is at index 0)
+    // Requires: col represents array index (i.e. first column is at index 0)
     // Modifies: private data members
     // Effects: Makes the move, returning the appropriate result --
     //          IllegalMove, Win, Draw, NoResult. The function itself is
     //          pretty simple, as it uses several helper functions.
-    // Note: Parameter col represents array index.
-	//       Important -- make sure to update next player before detecting
-	//       the correct result (Win, Draw, NoResult).
+    // Important -- make sure to update next player before detecting
+    //              the correct result (Win, Draw, NoResult).
     // Difficulty: **
     // Topics: Use of private helper functions
     // Calls: getFirstFreeRow, updateToMove, isBoardFull, isWin
