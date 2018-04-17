@@ -3,11 +3,11 @@ Connect 4 Project
 
 // TODO: Pick a Reach and Input the chosen functionality 
 
-REACH: [Graphics | AI]
+REACH: [Graphics]
 
 Functionality Implemented: 
-    Medium: [Enter Functionality]
-    Hard: [Enter Functionality]
+    Medium: [Having the player's token follow the mouse]
+    Hard: [Highlighting the winning tokens and creating a splash screen for the game]
 
 Other Notes/Comments: 
 
